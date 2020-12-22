@@ -22,4 +22,9 @@ public class PirateController {
 	public List<Pirate> getPirates(){
 		return pirateService.getPirates();
 	}
+	
+	@GetMapping("/blackbeard")
+	public List<Pirate> getPirateByName(){
+		return pirateService.getPirateByName();
+	}
 }
