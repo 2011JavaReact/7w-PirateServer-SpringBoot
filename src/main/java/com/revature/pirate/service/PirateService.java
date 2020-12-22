@@ -21,7 +21,11 @@ public class PirateService {
 		return pirateDao.findAll();
 	}
 	
-//	public Pirate getPirateById(int id) {
-//		return pirateDao.findById(id);
-//	}
+	public Pirate createPirate(Pirate pirate) {
+		return pirateDao.save(pirate);
+	}
+	
+	public Pirate getPirateById(int id) {
+		return pirateDao.findById(id).get();
+	}
 }

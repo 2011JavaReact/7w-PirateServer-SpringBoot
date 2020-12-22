@@ -8,14 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Data
 @AllArgsConstructor
@@ -25,12 +24,17 @@ import lombok.Setter;
 public class Pirate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
 	private int id;
 	@Column
+	@Size(min = 4)
 	private String name;
 	@ManyToOne
 	@JoinColumn(name = "role_id")
 	private Role role;
 	@Column
-	private double price;
+//	@Min(value = (long)1.00)
+//	private double price;
+	@Min(value = 10)
+	private int price;
 }
