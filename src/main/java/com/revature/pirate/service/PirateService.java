@@ -13,11 +13,15 @@ public class PirateService {
 	@Autowired
 	private PirateDao pirateDao;
 	
-	public List<Pirate> getPirateByName(){
-		return pirateDao.findByName("blackbeard");
+	public List<Pirate> getPirateByName(String name){
+		return pirateDao.findByName(name);
 	}
 	
 	public List<Pirate> getPirates(){
 		return pirateDao.findAll();
 	}
+	
+//	public Pirate getPirateById(int id) {
+//		return pirateDao.findById(id);
+//	}
 }

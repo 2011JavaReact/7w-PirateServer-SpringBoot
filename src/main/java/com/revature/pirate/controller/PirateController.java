@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.pirate.model.Pirate;
@@ -23,8 +25,13 @@ public class PirateController {
 		return pirateService.getPirates();
 	}
 	
-	@GetMapping("/blackbeard")
-	public List<Pirate> getPirateByName(){
-		return pirateService.getPirateByName();
+	@GetMapping("/{name}")
+	public List<Pirate> getPirateByName(@PathVariable String name){
+		return pirateService.getPirateByName(name);
 	}
+	
+//	@GetMapping("/{id}")
+//	public Pirate getPirateById(@PathVariable int id) {
+//		return pirateService.
+//	}
 }
