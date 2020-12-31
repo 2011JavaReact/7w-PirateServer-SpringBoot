@@ -2,7 +2,7 @@
 This application is the first iteration of a distributed system that allows you to manage pirates and hire a pirate if you so desire.
 
 This application consists of a Microservices backend. An image below describes the overall architecture (React client not included):
-![architecture.png](architecture.png)
+![architecture.PNG](architecture.png)
 
 
 ## Description of Each Service
